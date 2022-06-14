@@ -18,7 +18,7 @@ export class ProductCreateComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
@@ -28,10 +28,9 @@ export class ProductCreateComponent implements OnInit {
       this.productService.showMessage('Produto criado!')
       this.router.navigate(['/products'])
     })
-
   }
 
-  cancel(): void{
+  cancel(): void {
     this.router.navigate(['/products'])
   }
 }

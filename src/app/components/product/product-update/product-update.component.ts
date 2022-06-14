@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./product-update.component.css"],
 })
 export class ProductUpdateComponent implements OnInit {
-  // product: Product;
+  product?: Product;
 
   constructor(
     private productService: ProductService,
@@ -18,18 +18,22 @@ export class ProductUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // const id = this.route.snapshot.paramMap.get("id");
-    // this.productService.readById(id).subscribe((product) => {
-    //   this.product = product;
-    // });
+    const id = this.route.snapshot.paramMap.get("id");
+    if (id) {
+      this.productService.readById(id).subscribe((product) => {
+        this.product = product;
+      });
+    }
   }
 
   updateProduct(): void {
-    // this.productService.update(this.product).subscribe(() => {
-    //   this.productService.showMessage("Produto atualizado com sucesso!");
-    //   this.router.navigate(["/products"])
-    // });
-    console.log('foi')
+    if (this.product) {
+      this.productService.update(this.product).subscribe(() => {
+        this.productService.showMessage("Produto atualizado com sucesso!");
+        this.router.navigate(["/products"])
+      });
+      console.log('foi')
+    }
   }
 
   cancel(): void {

@@ -13,8 +13,7 @@ export class ProductReadComponent implements OnInit {
   products: Product[] = [];
   displayedColumns = ['id', 'name', 'price', 'action']
 
-  constructor(private productService: ProductService) { 
-
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
@@ -23,5 +22,4 @@ export class ProductReadComponent implements OnInit {
       console.log(products)
     })
   }
-
 }
