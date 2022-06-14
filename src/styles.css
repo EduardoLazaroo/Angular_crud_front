@@ -4,9 +4,16 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .red {
-    color: #e35f5f;
+    color: #db1414;
 }
 
+.blue {
+    color: #1417db;
+}
+
+.yellow {
+    color: #d8db14;
+}
 .v-middle {
     vertical-align: middle;
 }
